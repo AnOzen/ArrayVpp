@@ -86,6 +86,13 @@ public final class Reads {
         this.comparisons.set(value);
     }
 
+    public int getTrueValue(int val) {
+        if (arrayVisualizer.doingStabilityCheck())
+            return arrayVisualizer.getStabilityValue(val);
+        else
+            return val;
+    }
+
     public int compareValues(int left, int right) {
         if (arrayVisualizer.sortCanceled()) throw new StopSort();
         this.comparisons.incrementAndGet();

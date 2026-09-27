@@ -7,13 +7,13 @@ import io.github.arrayv.sorts.templates.Sort;
  * @author Flanlaina
  *
  */
-public class ReverseUnoptimizedGnomeSort extends Sort {
+public class ReverseGnomeSort extends Sort {
 
-    public ReverseUnoptimizedGnomeSort(ArrayVisualizer arrayVisualizer) {
+    public ReverseGnomeSort(ArrayVisualizer arrayVisualizer) {
         super(arrayVisualizer);
-        this.setSortListName("Reverse Unoptimized Gnome");
-        this.setRunAllSortsName("Reverse Unoptimized Gnome Sort");
-        this.setRunSortName("Reverse Unoptimized Gnomesort");
+        this.setSortListName("Reverse Gnome");
+        this.setRunAllSortsName("Reverse Gnome Sort");
+        this.setRunSortName("Reverse Gnomesort");
         this.setCategory("Exchange Sorts");
         this.setAuthors("Flanlaina");
         this.setBucketSort(false);

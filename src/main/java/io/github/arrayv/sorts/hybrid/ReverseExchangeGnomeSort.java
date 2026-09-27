@@ -1,4 +1,4 @@
-package io.github.arrayv.sorts.select;
+package io.github.arrayv.sorts.hybrid;
 
 import io.github.arrayv.main.ArrayVisualizer;
 import io.github.arrayv.sorts.templates.Sort;
@@ -31,18 +31,19 @@ SOFTWARE.
  */
 
 /**
- * Exchange Sort + Gnome Sort
+ * Reverse Exchange Sort + Gnome Sort
+ * 
  * @author mbg206
  * @author Flanlaina
  */
-public class ExchangeGnomeSort extends Sort {  
-    public ExchangeGnomeSort(ArrayVisualizer arrayVisualizer) {
+public class ReverseExchangeGnomeSort extends Sort {  
+    public ReverseExchangeGnomeSort(ArrayVisualizer arrayVisualizer) {
         super(arrayVisualizer);
         
-        this.setSortListName("Exchange Gnome");
-        this.setRunAllSortsName("Exchange Gnome Sort (Exchange Sort + Gnome)");
-        this.setRunSortName("Exchange Gnome Sort");
-        this.setCategory("Selection Sorts");
+        this.setSortListName("Reverse Exchange Gnome");
+        this.setRunAllSortsName("Reverse Exchange Gnome Sort");
+        this.setRunSortName("Reverse Exchange Gnome Sort");
+        this.setCategory("Hybrid Sorts");
         this.setAuthors("Flanlaina, mbg206");
         this.setBucketSort(false);
         this.setRadixSort(false);
@@ -54,13 +55,12 @@ public class ExchangeGnomeSort extends Sort {
     public void sort(int[] array, int a, int b) {
         int length = b - a;
         for (int i = a; i < a + length / 2; i++) {
-            for (int j = i + 1; j < b; j++) {
+            for (int j = b - 1; j > i; j--) {
                 if (Reads.compareIndices(array, j, i, 0.01, true) < 0){
                     Writes.swap(array, i, j, 0.01, true, false);
                 }
             }
         }
-        Writes.reversal(array, a + length / 2, b - 1, 1, true, false);
         for (int i = b - 1; i > a;) {
             if (Reads.compareIndices(array, i - 1, i, 0.03, true) > 0) {
                 Writes.swap(array, i, i - 1, 0.03, true, false);

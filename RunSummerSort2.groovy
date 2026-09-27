@@ -3,10 +3,10 @@ import io.github.arrayv.utils.Distributions
 
 def runSorts(shuffleName) {
     setCategory(shuffleName)
-    run SegmentTreeSort go 4096.numbers, 4.speed
+    run NewPatienceSort go 4096.numbers, 4.speed
 }
 
-runGroup(25) {
+runGroup(80) {
     arrayv.arrayManager.setDistribution(Distributions.LINEAR) // 1
     arrayv.arrayManager.setShuffleSingle(Shuffles.RANDOM)
     runSorts("Random")
@@ -84,6 +84,171 @@ runGroup(25) {
 
     arrayv.arrayManager.setShuffleSingle(Shuffles.TRIANGULAR) // 25
     runSorts("Triangular Input")
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.SHUFFLED_HALF_BACK); // 26
+    runSorts("Scrambled Second Half");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.SHUFFLED_HALF_FRONT); // 27
+    runSorts("Scrambled First Half");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.SHUFFLED_ENDS); // 28
+    runSorts("Both Sides Scrambled");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.NOISY); // 29
+    runSorts("Noisy Input");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.PARTITIONED); // 30
+    runSorts("Partitioned");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.SAWTOOTH).addSingle(Shuffles.REVERSE); // 31
+    runSorts("Reversed Sawtooth");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.FINAL_BITONIC); // 32
+    runSorts("Final Bitonic Pass");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.DOUBLE_LAYERED).addSingle(Shuffles.HALF_ROTATION); // 33
+    runSorts("Diamond");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.INV_BST); // 34
+    runSorts("Inverted Binary Search Tree");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.REC_RADIX); // 35
+    runSorts("Recursive Final Radix");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.REC_REV); // 36
+    runSorts("Recursive Reversal");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.TRI_HEAP).setSleepRatio(1.5); // 37
+    runSorts("Triangular Heap");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.BIT_REVERSE); // 38
+    runSorts("Bit Reversed");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.BLOCK_RANDOMLY); // 39
+    runSorts("Block Shuffled");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.BLOCK_REVERSE); // 40
+    runSorts("Block Reversed");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.QSORT_BAD); // 41
+    runSorts("Quicksort Killer");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.PDQ_BAD); // 42
+    runSorts("PDQ Killer");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.GRAIL_BAD); // 43
+    runSorts("Grailsort Killer");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.SHUF_MERGE_BAD); // 44
+    runSorts("Shuffle Merge Killer");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.CIRCLE); // 45
+    runSorts("Circle Pass");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.SORTED); // 46
+    runSorts("Already Sorted");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.WEAVE); // 47
+    runSorts("Final Weave Pass");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.RANDOM_ROTATION); // 48
+    runSorts("Random Rotation");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.MODULO); // 49
+    runSorts("Modulo");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.XORSWAP); // 50
+    runSorts("XOR Swap");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.FINAL_MERGE).addSingle(Shuffles.PARTIAL_REVERSE_ALT); // 51
+    runSorts("Penultimate Bitonic Pass");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.GRAY_CODE); // 52
+    runSorts("Gray Code Fractal");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.PARTITIONED).addSingle(Shuffles.FINAL_RADIX); // 53
+    runSorts("Weaved Partition");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.PRIMES_REVERSED); // 54
+    runSorts("Primes Reversed");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.BST_PREORDER); // 55
+    runSorts("Pre-order BST Traversal");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.BST_POSTORDER); // 56
+    runSorts("Post-order BST Traversal");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.RBST_BREADTH); // 57
+    runSorts("Breadth RBST Traversal");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.ONLY_RUNS); // 58
+    runSorts("Random Runs");
+
+    arrayv.arrayManager.setShuffleSingle(Shuffles.LOG_SLOPES); // 59
+    runSorts("Logpile");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.RANDOM); // 60
+    runSorts("White Noise");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.MODULO); // 61
+    runSorts("Modulo Function");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.CUBIC).addSingle(Shuffles.RANDOM).setSleepRatio(2); // 62
+    runSorts("Shuffled Cubic");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.QUINTIC).addSingle(Shuffles.RANDOM).setSleepRatio(2); // 63
+    runSorts("Shuffled Quintic");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.SINE); // 64
+    runSorts("Sine Wawe");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.COSINE); // 65
+    runSorts("Cosine Wawe");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.SIMILAR).addSingle(Shuffles.RANDOM).setSleepRatio(2); // 66
+    runSorts("Few Unique");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.EQUAL); // 67
+    runSorts("No Unique");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.RULER); // 68
+    runSorts("Ruler");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.BLANCMANGE); // 69
+    runSorts("Blancmange Curve");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.CANTOR).addSingle(Shuffles.RANDOM).setSleepRatio(2); // 70
+    runSorts("Shuffled Cantor Function");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.DIVISORS); // 71
+    runSorts("Sum of Divisors");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.DIGITS_PROD); // 72
+    runSorts("Product of Digits");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.DIGITS_SUM); // 73
+    runSorts("Sum of Digits");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.TOTIENT); // 74
+    runSorts("Euler Totient Function");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.FSD); // 75
+    runSorts("Fly Straight, Dammit!");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.NOISY_UNIQUES); // 76
+    runSorts("Noisy Uniques");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.RAMP); // 77
+    runSorts("Ramps");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.REVLOG); // 78
+    runSorts("Decreasing Random");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.INCREASING_RANDOM); // 79
+    runSorts("Increasing Random");
+
+    arrayv.arrayManager.setShuffleSingle(Distributions.WEIERSTRASS); // 80
+    runSorts("Weierstrass Function");
 
     setCategory("RunSummerSort")
 }
