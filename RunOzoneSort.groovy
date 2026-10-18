@@ -2,7 +2,7 @@ import io.github.arrayv.utils.Distributions
 import io.github.arrayv.utils.Shuffles
 def runSorts(shuffleName) {
   setCategory(shuffleName)
-  run OzoneSort go 1024.numbers, 1.speed
+  run IterativeOzoneSort go 1024.numbers, 1.speed
 }
 
 runGroup(81) {
