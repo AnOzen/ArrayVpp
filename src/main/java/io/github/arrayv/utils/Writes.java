@@ -260,11 +260,11 @@ public final class Writes {
         }
     }
 
-    public void reversal(int[] array, int start, int length, double sleep, boolean mark, boolean auxwrite) {
+    public void reversal(int[] array, int start, int end, double sleep, boolean mark, boolean auxwrite) {
         this.reversals.incrementAndGet();
 
-        for (int i = start; i < start + ((length - start + 1) / 2); i++) {
-            this.swap(array, i, start + length - i, sleep, mark, auxwrite);
+        for (int i = start; i < start + ((end - start + 1) / 2); i++) {
+            this.swap(array, i, start + end - i, sleep, mark, auxwrite);
         }
     }
 
