@@ -31,8 +31,8 @@ public class OptimizedTwitterSort extends Sort {
                     // L + Ratio
                     ratioed = true;
                     int ratio;
-                    if (array[i] == 0) {
-                        ratio = i;
+                    if (array[i] == j) {
+                        ratio = i + j;
                     } else {
                         ratio = (int) Math.ceil(array[i - 1] / array[i]);
                     }
